@@ -4,13 +4,12 @@ import { Configuration, OpenAIApi } from "openai";
 
 dotenv.config();
 
-// Setup open ai api key
+// open ai api key
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
 });
 const openai = new OpenAIApi(configuration);
 
-// Controller to generate Image
 
 export const generateImage = async (req, res, next) => {
   try {

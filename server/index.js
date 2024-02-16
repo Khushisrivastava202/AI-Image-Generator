@@ -26,14 +26,12 @@ app.use((err, req, res, next) => {
 app.use("/api/post", PostRouter);
 app.use("/api/generateImage", GenerateImageRouter);
 
-//Default get
 app.get("/", async (req, res) => {
   res.status(200).json({
-    message: "Hello GFG Developers!",
+    message: "Hello your server is running!",
   });
 });
 
-//function to connect to mongodb
 const connectDB = () => {
   mongoose.set("strictQuery", true);
   mongoose
@@ -45,7 +43,6 @@ const connectDB = () => {
     });
 };
 
-//function to start the server
 const startServer = async () => {
   try {
     connectDB();
